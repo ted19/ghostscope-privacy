@@ -11,12 +11,17 @@ Last updated / 최종 수정일: **1 September 2026**
 
 ### Summary
 
-GHOST SCOPE has no account system, no analytics, no advertising, and no
-internet permission. We operate no servers and receive nothing from the app.
+GHOST SCOPE has no account system and no analytics. We operate no servers and
+receive nothing from the app. Nothing it records — camera frames, coordinates,
+photos, or saved sessions — is ever sent anywhere by us.
 
 The app can read your device's location, but only if you allow it. Location is
-shown on screen and kept on your device with the records you choose to save. It
-is never sent anywhere.
+shown on screen and kept on your device with the records you choose to save.
+
+The app includes Google's AdMob advertising library. **Advertising is switched
+off in the current version, no ads are shown, and the library is not started.**
+If that changes in a future version, this policy will be updated before it
+ships and the section below will describe what AdMob does.
 
 ### The app in one line
 
@@ -56,8 +61,9 @@ The app declares `ACCESS_FINE_LOCATION` and `ACCESS_COARSE_LOCATION`. Both are
   your location in the background.
 - It is used for two things: showing the coordinates on screen, and storing
   them with records you choose to save.
-- Coordinates are read through Android's own location service. The app has no
-  internet permission, so they cannot be sent anywhere.
+- Coordinates are read through Android's own location service. GHOST SCOPE
+  never transmits them. They go to the screen and, if you save a record, to the
+  app's own storage on your device.
 - **If you decline, both features work exactly as before.** Records are simply
   saved without coordinates.
 
@@ -105,24 +111,48 @@ anything you do.
 
 The text-to-speech engine is separate software provided by your device
 manufacturer or by Google, and it is governed by its own privacy policy. Some
-engines synthesise speech over the network. GHOST SCOPE itself has no internet
-permission and cannot send or receive anything, but we cannot control how a
-separate speech engine behaves. If this concerns you, use an offline voice or
-do not use the Ghost Box.
+engines synthesise speech over the network. GHOST SCOPE sends it only the fixed
+word list built into the app — nothing about you, and nothing you typed — but we
+cannot control how a separate speech engine behaves. If this concerns you, use
+an offline voice or do not use the Ghost Box.
+
+### Advertising
+
+The app includes Google's AdMob library so that advertising can be enabled in a
+later version without rebuilding the app from scratch.
+
+**In this version advertising is off.** No ad is requested, no ad is displayed,
+and the AdMob library is never started — its automatic start-up component is
+removed from the app at build time, not merely skipped at runtime.
+
+If advertising is switched on in a future version, that version's policy will
+say so plainly. AdMob would then receive your device's advertising ID and
+technical information about your device in order to select ads, under
+[Google's own privacy policy](https://policies.google.com/privacy). We would
+still receive nothing ourselves.
 
 ### Network access
 
-The app does not hold the `INTERNET` permission. Android therefore prevents it
-from making any network connection. It contains no analytics library, no crash
-reporting library, and no advertising library.
+The app holds the `INTERNET` and `ACCESS_NETWORK_STATE` permissions because the
+bundled AdMob library requires them. **GHOST SCOPE does not use them.** It
+sends no camera frames, no coordinates, no photos, and no saved records — there
+is no server for them to go to.
 
 The app asks the Google Play Store app — separate software already on your
 device — whether a newer version of GHOST SCOPE exists, so it can tell you to
-update. GHOST SCOPE itself makes no network connection; the Play Store app does
-that work, under Google's own privacy policy.
+update. GHOST SCOPE itself makes no network connection for this; the Play Store
+app does that work, under Google's own privacy policy.
 
-The permissions the app declares are `CAMERA`, `ACCESS_FINE_LOCATION`, and
-`ACCESS_COARSE_LOCATION`. The two location permissions are optional.
+The app contains no analytics library and no crash reporting library.
+
+Permissions the app declares:
+
+| Permission | Why |
+| --- | --- |
+| `CAMERA` | Required. Analysing the camera image is the main function. |
+| `ACCESS_FINE_LOCATION`, `ACCESS_COARSE_LOCATION` | Optional. Coordinates on screen and in records. |
+| `INTERNET`, `ACCESS_NETWORK_STATE` | Required by the bundled AdMob library. Unused while advertising is off. |
+| `AD_ID`, `ACCESS_ADSERVICES_*`, `FOREGROUND_SERVICE`, `WAKE_LOCK` | Added by the AdMob library. Unused while advertising is off. |
 
 ### Children
 
@@ -145,13 +175,17 @@ shown on the Google Play listing for GHOST SCOPE.
 
 ### 요약
 
-GHOST SCOPE는 계정 기능, 분석 도구, 광고가 없으며 인터넷 권한 자체가
-없습니다. 저희는 서버를 운영하지 않으며 앱으로부터 어떤 데이터도 받지
-않습니다.
+GHOST SCOPE는 계정 기능과 분석 도구가 없습니다. 저희는 서버를 운영하지 않으며
+앱으로부터 어떤 데이터도 받지 않습니다. 앱이 기록하는 것 - 카메라 프레임,
+좌표, 사진, 저장한 세션 - 은 저희에게 전송되지 않습니다.
 
 앱은 사용자가 허용한 경우에 한해 기기의 위치를 읽습니다. 위치는 화면에
-표시되고, 사용자가 저장한 기록과 함께 기기 안에 보관됩니다. 어디로도
-전송되지 않습니다.
+표시되고, 사용자가 저장한 기록과 함께 기기 안에 보관됩니다.
+
+앱에는 Google AdMob 광고 라이브러리가 포함되어 있습니다. **현재 버전에서는
+광고가 꺼져 있어 광고가 표시되지 않으며, 라이브러리가 시작되지도 않습니다.**
+향후 버전에서 이것이 바뀐다면 배포 전에 이 방침을 먼저 갱신하고, 아래 항목에
+AdMob이 무엇을 하는지 설명합니다.
 
 ### 앱 소개
 
@@ -188,8 +222,9 @@ GHOST SCOPE는 카메라 영상에서 움직임과 이상 패턴을 실시간으
   읽지 않습니다.
 - 두 가지 용도로만 씁니다. 화면에 좌표를 표시하는 것과, 사용자가 저장한
   기록에 좌표를 함께 남기는 것입니다.
-- 좌표는 안드로이드의 위치 서비스를 통해 읽습니다. 앱에는 인터넷 권한이
-  없으므로 어디로도 보낼 수 없습니다.
+- 좌표는 안드로이드의 위치 서비스를 통해 읽습니다. GHOST SCOPE는 이 값을
+  전송하지 않습니다. 화면에 표시하고, 기록을 저장하면 기기 안의 앱 전용
+  저장 공간에 남길 뿐입니다.
 - **거부해도 두 기능은 그대로 동작합니다.** 기록에 좌표가 남지 않을 뿐입니다.
 
 안드로이드 시스템 설정에서 언제든 위치 권한을 회수할 수 있습니다.
@@ -234,23 +269,47 @@ GHOST SCOPE는 카메라 영상에서 움직임과 이상 패턴을 실시간으
 
 음성 합성 엔진은 기기 제조사 또는 Google이 제공하는 별도의 소프트웨어이며
 자체 개인정보처리방침을 따릅니다. 일부 엔진은 네트워크를 통해 음성을
-합성합니다. GHOST SCOPE 자체는 인터넷 권한이 없어 아무것도 주고받을 수
-없지만, 별도 음성 엔진의 동작까지 저희가 통제할 수는 없습니다. 이 점이
-우려되신다면 오프라인 음성을 사용하시거나 고스트 박스를 사용하지 마십시오.
+합성합니다. GHOST SCOPE가 엔진에 넘기는 것은 앱에 내장된 고정 단어 목록뿐이며
+사용자에 관한 정보나 사용자가 입력한 내용은 넘기지 않습니다. 다만 별도 음성
+엔진의 동작까지 저희가 통제할 수는 없습니다. 이 점이 우려되신다면 오프라인
+음성을 사용하시거나 고스트 박스를 사용하지 마십시오.
+
+### 광고
+
+앱에는 Google AdMob 라이브러리가 포함되어 있습니다. 이후 버전에서 앱을 다시
+만들지 않고도 광고를 켤 수 있도록 미리 넣어 둔 것입니다.
+
+**이 버전에서 광고는 꺼져 있습니다.** 광고를 요청하지도, 표시하지도 않으며,
+AdMob 라이브러리는 시작되지 않습니다. 실행 중에 건너뛰는 정도가 아니라,
+라이브러리의 자동 시작 구성요소를 빌드 시점에 앱에서 제거합니다.
+
+향후 버전에서 광고를 켜게 되면 해당 버전의 방침에 그 사실을 명시합니다. 그때
+AdMob은 광고 선택을 위해 기기의 광고 ID와 기기에 관한 기술 정보를 수집하며,
+이는 [Google의 개인정보처리방침](https://policies.google.com/privacy)을
+따릅니다. 그 경우에도 저희가 받는 데이터는 없습니다.
 
 ### 네트워크 접근
 
-앱은 `INTERNET` 권한을 보유하지 않습니다. 따라서 안드로이드가 이 앱의 모든
-네트워크 연결을 차단합니다. 분석 라이브러리, 크래시 리포팅 라이브러리, 광고
-라이브러리를 포함하지 않습니다.
+앱은 포함된 AdMob 라이브러리가 요구하기 때문에 `INTERNET`과
+`ACCESS_NETWORK_STATE` 권한을 보유합니다. **GHOST SCOPE는 이 권한을 사용하지
+않습니다.** 카메라 프레임, 좌표, 사진, 저장한 기록 중 어느 것도 전송하지
+않습니다. 보낼 서버 자체가 없습니다.
 
 앱은 기기에 이미 설치된 별도 소프트웨어인 Google Play 스토어 앱에 GHOST
-SCOPE의 새 버전이 있는지 물어, 사용자에게 업데이트를 안내합니다. GHOST SCOPE
-자체는 네트워크에 연결하지 않으며, 그 통신은 Play 스토어 앱이 Google의
-개인정보처리방침에 따라 수행합니다.
+SCOPE의 새 버전이 있는지 물어, 사용자에게 업데이트를 안내합니다. 이 확인을
+위해 GHOST SCOPE 자체가 네트워크에 연결하지는 않으며, 그 통신은 Play 스토어
+앱이 Google의 개인정보처리방침에 따라 수행합니다.
 
-앱이 선언하는 권한은 `CAMERA`, `ACCESS_FINE_LOCATION`,
-`ACCESS_COARSE_LOCATION`입니다. 위치 권한 두 가지는 선택 사항입니다.
+앱은 분석 라이브러리와 크래시 리포팅 라이브러리를 포함하지 않습니다.
+
+앱이 선언하는 권한:
+
+| 권한 | 이유 |
+| --- | --- |
+| `CAMERA` | 필수. 카메라 영상 분석이 앱의 핵심 기능입니다. |
+| `ACCESS_FINE_LOCATION`, `ACCESS_COARSE_LOCATION` | 선택. 화면과 기록에 좌표를 남기는 데 씁니다. |
+| `INTERNET`, `ACCESS_NETWORK_STATE` | 포함된 AdMob 라이브러리가 요구합니다. 광고가 꺼져 있는 동안 사용되지 않습니다. |
+| `AD_ID`, `ACCESS_ADSERVICES_*`, `FOREGROUND_SERVICE`, `WAKE_LOCK` | AdMob 라이브러리가 추가합니다. 광고가 꺼져 있는 동안 사용되지 않습니다. |
 
 ### 아동
 
