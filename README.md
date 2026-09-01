@@ -2,7 +2,7 @@
 
 **[English](#english) · [한국어](#한국어)**
 
-App: **GHOST SCOPE: Camera & Box** (`com.dalcomsoft.ghost`)
+App: **GHOST SCOPE: Camera & Box** (`com.mudangstudio.ghostscope`)
 Last updated / 최종 수정일: **1 September 2026**
 
 ---
