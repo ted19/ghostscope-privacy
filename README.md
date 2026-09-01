@@ -91,8 +91,12 @@ for a session — the words that were spoken.
 
 - This list lives in the app's own private storage. Other apps cannot read it.
 - It is removed when you uninstall the app.
-- You can delete any entry, or all of them, from the Records screen. Deleting
-  an entry does not delete the photo from your gallery.
+- Records has two views: a list of everything, and a grid of just the photos.
+- Deleting an entry from the list removes the record only; the photo stays in
+  your gallery. Deleting a photo from the photo view removes both the photo and
+  its record, and asks you to confirm first.
+- Deleting everything from the Records screen removes every record. Photos
+  already in your gallery stay where they are.
 
 ### Settings stored on your device
 
@@ -250,8 +254,13 @@ GHOST SCOPE는 카메라 영상에서 움직임과 이상 패턴을 실시간으
 
 - 이 목록은 앱 전용 저장 공간에 있습니다. 다른 앱은 읽을 수 없습니다.
 - 앱을 삭제하면 함께 사라집니다.
-- 지난 기록 화면에서 항목을 개별로, 또는 전체를 삭제할 수 있습니다. 항목을
-  지워도 갤러리에 저장된 사진은 지워지지 않습니다.
+- 지난 기록에는 두 가지 보기가 있습니다. 전체를 시간순으로 보는 목록과,
+  사진만 모아 보는 격자입니다.
+- 목록에서 항목을 지우면 기록만 사라지고 갤러리의 사진은 그대로 남습니다.
+  사진 보기에서 사진을 지우면 사진과 기록이 함께 사라지며, 지우기 전에 한 번
+  확인합니다.
+- 지난 기록 화면의 전체 삭제는 기록만 모두 지웁니다. 갤러리에 저장된 사진은
+  그대로 남습니다.
 
 ### 기기에 저장되는 설정
 
