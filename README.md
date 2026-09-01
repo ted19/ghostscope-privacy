@@ -11,9 +11,12 @@ Last updated / 최종 수정일: **1 September 2026**
 
 ### Summary
 
-GHOST SCOPE does not collect, store, or transmit any personal data. It has no
-account system, no analytics, no advertising, and no internet permission. Every
-feature runs entirely on your device.
+GHOST SCOPE has no account system, no analytics, no advertising, and no
+internet permission. We operate no servers and receive nothing from the app.
+
+The app can read your device's location, but only if you allow it. Location is
+shown on screen and kept on your device with the records you choose to save. It
+is never sent anywhere.
 
 ### The app in one line
 
@@ -25,7 +28,8 @@ phenomenon.
 ### What we collect
 
 **Nothing.** We operate no servers and receive no data from the app. There is
-no way for us to identify you or your device.
+no way for us to identify you or your device. Everything described below stays
+on your device.
 
 ### Camera
 
@@ -41,6 +45,24 @@ its main function.
 You can revoke camera access at any time in the Android system settings. The
 Ghost Box will keep working; the camera features will not.
 
+### Location
+
+The app declares `ACCESS_FINE_LOCATION` and `ACCESS_COARSE_LOCATION`. Both are
+**optional**.
+
+- The app asks for location only when you tap the coordinate line on the Ghost
+  Camera or Ghost Box screen. It does not ask on first launch.
+- Location is read only while one of those screens is open. The app never reads
+  your location in the background.
+- It is used for two things: showing the coordinates on screen, and storing
+  them with records you choose to save.
+- Coordinates are read through Android's own location service. The app has no
+  internet permission, so they cannot be sent anywhere.
+- **If you decline, both features work exactly as before.** Records are simply
+  saved without coordinates.
+
+You can revoke location access at any time in the Android system settings.
+
 ### Photos you choose to save
 
 When you press the capture button, the app saves a single image to your
@@ -48,10 +70,29 @@ device's own photo gallery, under `Pictures/Ghost`. This happens only when you
 press that button. The image stays on your device and is yours to keep, share,
 or delete. The app does not read your existing photos.
 
+**Coordinates inside the photo file.** If you have allowed location and left
+*Include location in photos* switched on (it is on by default, in Settings),
+the coordinates are written into the photo's own EXIF metadata. That means if
+you send the photo to someone, the place it was taken travels with it. Switch
+that setting off to keep saved photos free of coordinates — records inside the
+app keep their coordinates either way.
+
+### Records kept on your device
+
+The Records screen lists photos you captured and Ghost Box sessions you chose
+to save. Each entry holds the time, the coordinates if there were any, and —
+for a session — the words that were spoken.
+
+- This list lives in the app's own private storage. Other apps cannot read it.
+- It is removed when you uninstall the app.
+- You can delete any entry, or all of them, from the Records screen. Deleting
+  an entry does not delete the photo from your gallery.
+
 ### Settings stored on your device
 
-The app stores two small values in its own private storage: whether you have
-seen the introduction screen, and your chosen detection sensitivity. These
+The app stores a few small values in its own private storage: whether you have
+seen the introduction screen, your chosen detection sensitivity, the Ghost Box
+scan speed and volume, and whether to include location in saved photos. These
 never leave your device and are removed when you uninstall the app.
 
 ### Speech synthesis
@@ -75,7 +116,13 @@ The app does not hold the `INTERNET` permission. Android therefore prevents it
 from making any network connection. It contains no analytics library, no crash
 reporting library, and no advertising library.
 
-The only permission the app declares is `CAMERA`.
+The app asks the Google Play Store app — separate software already on your
+device — whether a newer version of GHOST SCOPE exists, so it can tell you to
+update. GHOST SCOPE itself makes no network connection; the Play Store app does
+that work, under Google's own privacy policy.
+
+The permissions the app declares are `CAMERA`, `ACCESS_FINE_LOCATION`, and
+`ACCESS_COARSE_LOCATION`. The two location permissions are optional.
 
 ### Children
 
@@ -85,8 +132,7 @@ collects no data from anyone, including children.
 ### Changes to this policy
 
 If this policy changes, the updated text will be published at this address and
-the date above will be revised. Because the app collects nothing, we do not
-expect material changes.
+the date above will be revised.
 
 ### Contact
 
@@ -99,9 +145,13 @@ shown on the Google Play listing for GHOST SCOPE.
 
 ### 요약
 
-GHOST SCOPE는 어떠한 개인정보도 수집·저장·전송하지 않습니다. 계정 기능,
-분석 도구, 광고가 없으며 인터넷 권한 자체가 없습니다. 모든 기능은 사용자
-기기 안에서만 동작합니다.
+GHOST SCOPE는 계정 기능, 분석 도구, 광고가 없으며 인터넷 권한 자체가
+없습니다. 저희는 서버를 운영하지 않으며 앱으로부터 어떤 데이터도 받지
+않습니다.
+
+앱은 사용자가 허용한 경우에 한해 기기의 위치를 읽습니다. 위치는 화면에
+표시되고, 사용자가 저장한 기록과 함께 기기 안에 보관됩니다. 어디로도
+전송되지 않습니다.
 
 ### 앱 소개
 
@@ -112,7 +162,8 @@ GHOST SCOPE는 카메라 영상에서 움직임과 이상 패턴을 실시간으
 ### 수집하는 정보
 
 **없습니다.** 저희는 서버를 운영하지 않으며 앱으로부터 어떤 데이터도 받지
-않습니다. 사용자나 기기를 식별할 수 있는 수단이 없습니다.
+않습니다. 사용자나 기기를 식별할 수 있는 수단이 없습니다. 아래에 설명하는
+모든 것은 사용자 기기 안에만 남습니다.
 
 ### 카메라
 
@@ -126,6 +177,23 @@ GHOST SCOPE는 카메라 영상에서 움직임과 이상 패턴을 실시간으
 안드로이드 시스템 설정에서 언제든 카메라 권한을 회수할 수 있습니다. 고스트
 박스는 계속 사용할 수 있고, 카메라 기능만 동작하지 않습니다.
 
+### 위치
+
+앱은 `ACCESS_FINE_LOCATION`과 `ACCESS_COARSE_LOCATION`을 선언합니다. 두 권한
+모두 **선택 사항**입니다.
+
+- 고스트 카메라 또는 고스트 박스 화면에서 좌표 자리를 눌렀을 때만 위치
+  권한을 요청합니다. 첫 실행 시에는 묻지 않습니다.
+- 위치는 해당 화면이 열려 있는 동안에만 읽습니다. 백그라운드에서는 절대
+  읽지 않습니다.
+- 두 가지 용도로만 씁니다. 화면에 좌표를 표시하는 것과, 사용자가 저장한
+  기록에 좌표를 함께 남기는 것입니다.
+- 좌표는 안드로이드의 위치 서비스를 통해 읽습니다. 앱에는 인터넷 권한이
+  없으므로 어디로도 보낼 수 없습니다.
+- **거부해도 두 기능은 그대로 동작합니다.** 기록에 좌표가 남지 않을 뿐입니다.
+
+안드로이드 시스템 설정에서 언제든 위치 권한을 회수할 수 있습니다.
+
 ### 사용자가 저장한 사진
 
 촬영 버튼을 누르면 앱이 이미지 한 장을 기기의 사진 갤러리
@@ -133,11 +201,29 @@ GHOST SCOPE는 카메라 영상에서 움직임과 이상 패턴을 실시간으
 일어납니다. 저장된 이미지는 사용자 기기에 남으며 보관·공유·삭제 모두 사용자
 권한입니다. 앱은 기존 사진을 읽지 않습니다.
 
+**사진 파일 안의 좌표.** 위치 권한을 허용했고 설정의 *사진에 위치 정보
+포함*이 켜져 있으면(기본값은 켜짐), 좌표가 사진 파일 자체의 EXIF 메타데이터에
+기록됩니다. 즉 그 사진을 다른 사람에게 보내면 촬영 위치도 함께 전달됩니다.
+사진에 좌표를 남기고 싶지 않다면 이 설정을 끄십시오. 앱 안의 지난 기록에는
+이 설정과 무관하게 좌표가 남습니다.
+
+### 기기에 남는 기록
+
+지난 기록 화면에는 사용자가 촬영한 사진과 저장하기로 선택한 고스트 박스
+세션이 표시됩니다. 각 항목에는 시각, 좌표가 있었다면 그 좌표, 그리고 세션의
+경우 들린 말이 담깁니다.
+
+- 이 목록은 앱 전용 저장 공간에 있습니다. 다른 앱은 읽을 수 없습니다.
+- 앱을 삭제하면 함께 사라집니다.
+- 지난 기록 화면에서 항목을 개별로, 또는 전체를 삭제할 수 있습니다. 항목을
+  지워도 갤러리에 저장된 사진은 지워지지 않습니다.
+
 ### 기기에 저장되는 설정
 
-앱은 자체 저장 공간에 두 가지 값만 보관합니다. 소개 화면을 봤는지 여부와
-선택한 감지 감도입니다. 이 값들은 기기를 벗어나지 않으며 앱을 삭제하면 함께
-사라집니다.
+앱은 자체 저장 공간에 몇 가지 작은 값만 보관합니다. 소개 화면을 봤는지 여부,
+선택한 감지 감도, 고스트 박스의 스캔 속도와 볼륨, 그리고 저장하는 사진에
+위치를 포함할지 여부입니다. 이 값들은 기기를 벗어나지 않으며 앱을 삭제하면
+함께 사라집니다.
 
 ### 음성 합성
 
@@ -158,7 +244,13 @@ GHOST SCOPE는 카메라 영상에서 움직임과 이상 패턴을 실시간으
 네트워크 연결을 차단합니다. 분석 라이브러리, 크래시 리포팅 라이브러리, 광고
 라이브러리를 포함하지 않습니다.
 
-앱이 선언하는 유일한 권한은 `CAMERA`입니다.
+앱은 기기에 이미 설치된 별도 소프트웨어인 Google Play 스토어 앱에 GHOST
+SCOPE의 새 버전이 있는지 물어, 사용자에게 업데이트를 안내합니다. GHOST SCOPE
+자체는 네트워크에 연결하지 않으며, 그 통신은 Play 스토어 앱이 Google의
+개인정보처리방침에 따라 수행합니다.
+
+앱이 선언하는 권한은 `CAMERA`, `ACCESS_FINE_LOCATION`,
+`ACCESS_COARSE_LOCATION`입니다. 위치 권한 두 가지는 선택 사항입니다.
 
 ### 아동
 
@@ -167,8 +259,7 @@ GHOST SCOPE는 카메라 영상에서 움직임과 이상 패턴을 실시간으
 
 ### 방침 변경
 
-방침이 변경되면 이 주소에 갱신된 내용을 게시하고 위 날짜를 수정합니다. 앱이
-아무것도 수집하지 않으므로 중대한 변경은 예상하지 않습니다.
+방침이 변경되면 이 주소에 갱신된 내용을 게시하고 위 날짜를 수정합니다.
 
 ### 문의
 
